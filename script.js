@@ -10,3 +10,14 @@
 // con difficoltà 0 => tra 1 e 100
 // con difficoltà 1 =>  tra 1 e 80
 // con difficoltà 2 => tra 1 e 50
+var min = 1;
+var max = 100;
+var arrayPc=[];
+var pcNum;
+for (var x=0; arrayPc.length < 16; x++){
+  pcNum = randomNumber(min, max);
+  console.log('Numero generato randomicamente: ', pcNum);
+  Doppleganger(arrayPc, pcNum);
+}
+
+console.log('array riempito con 16 numeri differenti', arrayPc);
