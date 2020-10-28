@@ -10,10 +10,14 @@
 // con difficoltà 0 => tra 1 e 100
 // con difficoltà 1 =>  tra 1 e 80
 // con difficoltà 2 => tra 1 e 50
+
+//dichiarazione variabili
 var min = 1;
 var max = 100;
 var arrayPc=[];
 var pcNum;
+
+//push Randomnumbers(1/100) into arrayPc with 16 unique numbers
 for (var x=0; arrayPc.length < 16; x++){
   pcNum = randomNumber(min, max);
   console.log('Numero generato randomicamente: ', pcNum);
