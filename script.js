@@ -19,17 +19,15 @@ var randomTot = 16;
 var arrayPc=[];
 var arrayUser=[];
 var pcNum;
-
-//push Randomnumbers(1/100) into arrayPc with 16 unique numbers
-while (arrayPc.length < randomTot){
-  pcNum = randomNumber(min, max);
-  console.log('Numero generato randomicamente: ', pcNum);
-  Doppleganger(arrayPc, pcNum);
-}
-
 // }
 
 btnAvvia.addEventListener('click', function (){
+  while (arrayPc.length < randomTot){
+    //push Randomnumbers(1/100) into arrayPc with 16 unique numbers
+    pcNum = randomNumber(min, max);
+    console.log('Numero generato randomicamente: ', pcNum);
+    Doppleganger(arrayPc, pcNum);
+  }
   if (arrayUser.length < (max - randomTot)){
   var userNum = parseInt(document.getElementById('inputUserNum').value);
   DopplegangerUser(arrayUser, userNum, arrayPc);

@@ -19,8 +19,9 @@ function DopplegangerUser(array, number, array2) {
       if (array2.indexOf(number) === -1) {
         array.push(number);
       } else {
-        console.log('HAI PERSO!');
-        array1 = [''];
+        alert('HAI PERSO!');
+        array.length = 0;
+        array2.length = 0;
       }
     } else if (array.indexOf(number) > -1) {
         console.log(number,  ' already exists');
