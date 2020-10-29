@@ -20,10 +20,8 @@ function DopplegangerUser(array, number, array2) {
         array.push(number);
       } else {
         alert('HAI PERSO!');
-        array.length = 0;
-        array2.length = 0;
       }
     } else if (array.indexOf(number) > -1) {
-        alert(number,  ' already exists');
+        alert('Hai già inserito il numero ' + number);
     }
 }

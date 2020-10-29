@@ -61,7 +61,7 @@ btnAvvia.addEventListener('click', function (){
   console.log('Numero inserito: ', userNum);
   console.log('array UTENTE con 16 numeri differenti', arrayUser);
 } else {
-  message = alert("Complimenti, hai vinto!");
+  alert("Complimenti, hai vinto!");
 }
 })
 
