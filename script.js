@@ -11,7 +11,15 @@ con difficoltà 0 => tra 1 e 100
 con difficoltà 1 =>  tra 1 e 80
 con difficoltà 2 => tra 1 e 50
 */
-
+// var difficulties = 100;
+//
+// switch (choice) {
+//   case 'easy':
+//   difficulties = 100;
+// break;
+//   case 'medium':
+//   difficulties = 80;
+//
 //dichiarazione variabili
 var min = 1;
 var max = 100;
@@ -19,6 +27,8 @@ var randomTot = 16;
 var arrayPc=[];
 var arrayUser=[];
 var pcNum;
+var message;
+var userNum;
 // }
 
 btnAvvia.addEventListener('click', function (){
@@ -28,13 +38,14 @@ btnAvvia.addEventListener('click', function (){
     console.log('Numero generato randomicamente: ', pcNum);
     Doppleganger(arrayPc, pcNum);
   }
-  if (arrayUser.length < (max - randomTot)){
-  var userNum = parseInt(document.getElementById('inputUserNum').value);
+  if ((userNum > max) || (userNum < min) || (isNaN(userNum) )){
+    alert('Non hai inserito un numero valido, per favore inserisci un numero da 1 a 100');
+  } else if (arrayUser.length < (max - randomTot) -1 ){ parseInt(document.getElementById('inputUserNum').value);
   DopplegangerUser(arrayUser, userNum, arrayPc);
   console.log('Numero inserito: ', userNum);
   console.log('array UTENTE con 16 numeri differenti', arrayUser);
 } else {
-  message = "Complimenti, hai vinto!"
+  message = alert("Complimenti, hai vinto!");
 }
 })
 

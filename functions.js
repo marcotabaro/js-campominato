@@ -24,6 +24,6 @@ function DopplegangerUser(array, number, array2) {
         array2.length = 0;
       }
     } else if (array.indexOf(number) > -1) {
-        console.log(number,  ' already exists');
+        alert(number,  ' already exists');
     }
 }
