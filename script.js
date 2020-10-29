@@ -11,15 +11,7 @@ con difficoltà 0 => tra 1 e 100
 con difficoltà 1 =>  tra 1 e 80
 con difficoltà 2 => tra 1 e 50
 */
-// var difficulties = 100;
-//
-// switch (choice) {
-//   case 'easy':
-//   difficulties = 100;
-// break;
-//   case 'medium':
-//   difficulties = 80;
-//
+
 //dichiarazione variabili
 var min = 1;
 var max = 100;
@@ -29,17 +21,35 @@ var arrayUser=[];
 var pcNum;
 var message;
 var userNum;
-// }
+var difficulties = 100;
 
+//Scelta della difficoltà
+switch (choice) {
+  case 'easy':
+  max = 100;
+  break;
+  case 'medium':
+  max = 80;
+  break;
+  case 'hard':
+  max = 50;
+  break;
+}
+
+//Bottone avvia
 btnAvvia.addEventListener('click', function (){
   while (arrayPc.length < randomTot){
-    //push Randomnumbers(1/100) into arrayPc with 16 unique numbers
+
+//push Randomnumbers(1/100) into arrayPc with 16 unique numbers
     pcNum = randomNumber(min, max);
     console.log('Numero generato randomicamente: ', pcNum);
     Doppleganger(arrayPc, pcNum);
   }
+
+//input validi
   if ((userNum > max) || (userNum < min) || (isNaN(userNum) )){
-    alert('Non hai inserito un numero valido, per favore inserisci un numero da 1 a 100');
+    alert('Non hai inserito un numero valido, per favore inserisci un numero da ', min 'a  ', max);
+//push numeri inseriti in array con check e vittoria
   } else if (arrayUser.length < (max - randomTot) -1 ){ parseInt(document.getElementById('inputUserNum').value);
   DopplegangerUser(arrayUser, userNum, arrayPc);
   console.log('Numero inserito: ', userNum);
