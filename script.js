@@ -2,9 +2,9 @@
 I numeri non possono essere duplicati
 In seguito deve chiedere all'utente (100 - 16) volte di inserire un numero alla volta, sempre compreso tra 1 e 100.
 L'utente non può inserire più volte lo stesso numero.
-Se il numero è presente nella lista dei numeri generati, la partita termina, altrimenti si continua chiedendo all'utente un altro numero.
-La partita termina quando il giocatore inserisce un numero "vietato" o raggiunge il numero massimo possibile di numeri consentiti.
-Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l'utente ha inserito un numero consentito.
+Se il numero è presente nella lista dei numeri generati, la partita terMINa, altrimenti si continua chiedendo all'utente un altro numero.
+La partita terMINa quando il giocatore inserisce un numero "vietato" o raggiunge il numero massimo possibile di numeri consentiti.
+Al terMINe della partita il software deve comunicare il punteggio, cioè il numero di volte che l'utente ha inserito un numero consentito.
 BONUS: (da fare solo se funziona tutto il resto)
 all'inizio il software richiede anche una difficoltà all'utente che cambia il range di numeri casuali:
 con difficoltà 0 => tra 1 e 100
@@ -13,8 +13,8 @@ con difficoltà 2 => tra 1 e 50
 */
 
 //dichiarazione variabili
-var min = 1;
-var max = 100;
+var MIN = 1;
+var MAX = 100;
 var randomTot = 16;
 var arrayPc=[];
 var arrayUser=[];
@@ -22,35 +22,41 @@ var pcNum;
 var message;
 var userNum;
 var difficulties = 100;
+var inputDiff = document.getElementById('inputDiff');
 
-//Scelta della difficoltà
-switch (choice) {
-  case 'easy':
-  max = 100;
-  break;
-  case 'medium':
-  max = 80;
-  break;
-  case 'hard':
-  max = 50;
-  break;
-}
 
 //Bottone avvia
 btnAvvia.addEventListener('click', function (){
+
+  //Scelta della difficoltà
+  switch (inputDiff.value) {
+    case 'easy':
+    MAX = 100;
+    break;
+    case 'medium':
+    MAX = 80;
+    break;
+    case 'hard':
+    MAX = 50;
+    break;
+  }
+
   while (arrayPc.length < randomTot){
 
 //push Randomnumbers(1/100) into arrayPc with 16 unique numbers
-    pcNum = randomNumber(min, max);
+    pcNum = randomNumber(MIN, MAX);
     console.log('Numero generato randomicamente: ', pcNum);
     Doppleganger(arrayPc, pcNum);
   }
+  var inputUserNum = document.getElementById('inputUserNum');
+  userNum = parseInt(inputUserNum.value);
+  if ((userNum > MAX) || (userNum < MIN) || (isNaN(userNum)) ){
+    alert('Non hai inserito un numero valido, per favore inserisci un numero da ' + MIN + ' a  ' + MAX);
+    console.log(userNum);
+  }
 
-//input validi
-  if ((userNum > max) || (userNum < min) || (isNaN(userNum) )){
-    alert('Non hai inserito un numero valido, per favore inserisci un numero da ', min 'a  ', max);
 //push numeri inseriti in array con check e vittoria
-  } else if (arrayUser.length < (max - randomTot) -1 ){ parseInt(document.getElementById('inputUserNum').value);
+   else if (arrayUser.length < (MAX - randomTot) -1 ){ parseInt(inputUserNum.value);
   DopplegangerUser(arrayUser, userNum, arrayPc);
   console.log('Numero inserito: ', userNum);
   console.log('array UTENTE con 16 numeri differenti', arrayUser);
