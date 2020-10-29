@@ -19,7 +19,6 @@ var randomTot = 16;
 var arrayPc=[];
 var arrayUser=[];
 var pcNum;
-var userNum = parseInt(document.getElementById('inputUserNum').value);
 
 //push Randomnumbers(1/100) into arrayPc with 16 unique numbers
 while (arrayPc.length < randomTot){
@@ -28,13 +27,17 @@ while (arrayPc.length < randomTot){
   Doppleganger(arrayPc, pcNum);
 }
 
-// while (arrayUser.length < (max - randomTot)){
 // }
 
 btnAvvia.addEventListener('click', function (){
-  Doppleganger(arrayUser, userNum.value);
+  if (arrayUser.length < (max - randomTot)){
+  var userNum = parseInt(document.getElementById('inputUserNum').value);
+  DopplegangerUser(arrayUser, userNum, arrayPc);
   console.log('Numero inserito: ', userNum);
   console.log('array UTENTE con 16 numeri differenti', arrayUser);
+} else {
+  message = "Complimenti, hai vinto!"
+}
 })
 
 console.log('array PC con 16 numeri differenti', arrayPc);
