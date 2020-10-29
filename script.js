@@ -15,14 +15,26 @@ con difficoltà 2 => tra 1 e 50
 //dichiarazione variabili
 var min = 1;
 var max = 100;
+var randomTot = 16;
 var arrayPc=[];
+var arrayUser=[];
 var pcNum;
+var userNum = parseInt(document.getElementById('inputUserNum').value);
 
 //push Randomnumbers(1/100) into arrayPc with 16 unique numbers
-while (arrayPc.length < 16){
+while (arrayPc.length < randomTot){
   pcNum = randomNumber(min, max);
   console.log('Numero generato randomicamente: ', pcNum);
   Doppleganger(arrayPc, pcNum);
 }
 
-console.log('array riempito con 16 numeri differenti', arrayPc);
+// while (arrayUser.length < (max - randomTot)){
+// }
+
+btnAvvia.addEventListener('click', function (){
+  Doppleganger(arrayUser, userNum.value);
+  console.log('Numero inserito: ', userNum);
+  console.log('array UTENTE con 16 numeri differenti', arrayUser);
+})
+
+console.log('array PC con 16 numeri differenti', arrayPc);
