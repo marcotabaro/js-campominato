@@ -14,12 +14,16 @@ function Doppleganger(array, number) {
     }
 }
 
+//Function check for the same value in the array,
 function DopplegangerUser(array, number, array2) {
     if (array.indexOf(number) === -1){
       if (array2.indexOf(number) === -1) {
         array.push(number);
       } else {
         alert('HAI PERSO!');
+        points = 0;
+        array.length = 0;
+        array2.length = 0;
       }
     } else if (array.indexOf(number) > -1) {
         alert('Hai già inserito il numero ' + number);

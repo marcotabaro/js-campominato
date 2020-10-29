@@ -22,6 +22,7 @@ var pcNum;
 var message;
 var userNum;
 var difficulties = 100;
+var points = 0;
 var inputDiff = document.getElementById('inputDiff');
 
 
@@ -58,6 +59,8 @@ btnAvvia.addEventListener('click', function (){
 //push numeri inseriti in array con check e vittoria
    else if (arrayUser.length < (MAX - randomTot) -1 ){ parseInt(inputUserNum.value);
   DopplegangerUser(arrayUser, userNum, arrayPc);
+  document.getElementById('punteggio').innerHTML = 'points: ' + points;
+  points +=10;
   console.log('Numero inserito: ', userNum);
   console.log('array UTENTE con 16 numeri differenti', arrayUser);
 } else {
