@@ -1,7 +1,19 @@
+*{
+  margin:0;
+  border:0;
+  box-sizing: border-box;
+}
+
 .container {
   display: flex;
   width: 1100px;
   margin: 0 auto;
   justify-content: center;
   align-content: center;
+}
+
+.square {
+  width: 50px;
+  height: 50px;
+  border: 2px solid black;
 }

@@ -26,6 +26,7 @@ var points = 0;
 var inputDiff = document.getElementById('inputDiff');
 
 
+
 //Bottone avvia
 btnAvvia.addEventListener('click', function (){
 
@@ -42,6 +43,12 @@ btnAvvia.addEventListener('click', function (){
     break;
   }
 
+//Creazione campo composto da n.'MAX' quadratini
+var wrapper = document.getElementById('wrapper');
+var square = "<div class='square'></div>";
+for (var cont=0; cont < MAX; cont++){
+  wrapper.innerHTML += square;
+}
   while (arrayPc.length < randomTot){
 
 //push Randomnumbers(1/100) into arrayPc with 16 unique numbers
