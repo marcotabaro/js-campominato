@@ -29,3 +29,12 @@ function isInTheArrays(array, number, array2) {
         alert('Hai già inserito il numero ' + number);
     }
 }
+
+//Function that allow only input numbers between a MIN and a MAX
+function allowedValues(number) {
+  if ((number > MAX) || (number < MIN)) {
+    alert('Per favore, inserisci un numero da ' + MIN + ' a ' + MAX);
+  } else if (isNaN(number)) {
+    alert('Puoi inserire solo numeri');
+  }
+}
