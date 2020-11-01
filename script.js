@@ -43,29 +43,30 @@ btnAvvia.addEventListener('click', function (){
     break;
   }
 
-//Creazione campo composto da n.'MAX' quadratini
-var wrapper = document.getElementById('wrapper');
-var square = "<div class='square'></div>";
-for (var cont=0; cont < MAX; cont++){
-  wrapper.innerHTML += square;
-}
-  while (arrayPc.length < randomTot){
-
+// //Creazione campo composto da n.'MAX' quadratini
+// var wrapper = document.getElementById('wrapper');
+// var square = "<div class='square'></div>";
+// for (var cont=0; cont < MAX; cont++){
+//   wrapper.innerHTML += square;
+// }
 //push Randomnumbers(1/100) into arrayPc with 16 unique numbers
+  while (arrayPc.length < randomTot){
     pcNum = randomNumber(MIN, MAX);
     console.log('Numero generato randomicamente: ', pcNum);
-    Doppleganger(arrayPc, pcNum);
+    isInArray(arrayPc, pcNum);
   }
+  
   var inputUserNum = document.getElementById('inputUserNum');
   userNum = parseInt(inputUserNum.value);
   if ((userNum > MAX) || (userNum < MIN) || (isNaN(userNum)) ){
-    alert('Non hai inserito un numero valido, per favore inserisci un numero da ' + MIN + ' a  ' + MAX);
+    alert('Non hai inserito un valore valido, per favore inserisci un numero da ' + MIN + ' a  ' + MAX);
     console.log(userNum);
   }
 
 //push numeri inseriti in array con check e vittoria
    else if (arrayUser.length < (MAX - randomTot) -1 ){ parseInt(inputUserNum.value);
-  DopplegangerUser(arrayUser, userNum, arrayPc);
+
+    isInTheArrays(arrayUser, userNum, arrayPc);
   document.getElementById('punteggio').innerHTML = 'points: ' + points;
   points +=10;
   console.log('Numero inserito: ', userNum);

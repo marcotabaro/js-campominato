@@ -6,18 +6,18 @@ function randomNumber(MIN, MAX) {
 }
 
 //Function that check if there is the same value inside an array, if not add the element in the array
-function Doppleganger(array, number) {
-    if (array.indexOf(number) === -1) {
+function isInArray(array, number) {
+    if (!array.includes(number)) {
         array.push(number);
-    } else if (array.indexOf(number) > -1) {
+    } else {
         console.log(number,  ' already exists');
     }
 }
 
-//Function check for the same value in the array,
-function DopplegangerUser(array, number, array2) {
-    if (array.indexOf(number) === -1){
-      if (array2.indexOf(number) === -1) {
+//Function that check if there is the same value inside 2 different arrays, if not add the element in the first array
+function isInTheArrays(array, number, array2) {
+    if (!array.includes(number)) {
+      if (!array2.includes(number)) {
         array.push(number);
       } else {
         alert('HAI PERSO!');
@@ -25,7 +25,7 @@ function DopplegangerUser(array, number, array2) {
         array.length = 0;
         array2.length = 0;
       }
-    } else if (array.indexOf(number) > -1) {
+    } else if (array.includes(number)) {
         alert('Hai già inserito il numero ' + number);
     }
 }
