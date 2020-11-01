@@ -22,8 +22,7 @@ function isInTheArrays(array, number, array2) {
       } else {
         alert('HAI PERSO!');
         points = 0;
-        array.length = 0;
-        array2.length = 0;
+
       }
     } else if (array.includes(number)) {
         alert('Hai già inserito il numero ' + number);

@@ -60,13 +60,12 @@ btnAvvia.addEventListener('click', function (){
   userNum = parseInt(inputUserNum.value);
   // if ((userNum > MAX) || (userNum < MIN) || (isNaN(userNum)) ){
   //   alert('Non hai inserito un valore valido, per favore inserisci un numero da ' + MIN + ' a  ' + MAX);
+  //}
 
   allowedValues (userNum);
-    console.log(userNum);
-//}
 
 //push numeri inseriti in array con check e vittoria
-   if (arrayUser.length < (MAX - randomTot) -1 ){
+   if (arrayUser.length < (MAX - randomTot) -1 ) {
     parseInt(inputUserNum.value);
     isInTheArrays(arrayUser, userNum, arrayPc);
   
